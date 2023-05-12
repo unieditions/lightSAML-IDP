@@ -28,7 +28,7 @@ class ACSUrlValidatorAction extends AbstractProfileAction
     {
         $authnRequest = MessageContextHelper::asAuthnRequest($context->getInboundContext());
 
-        if (false == $authnRequest->getAssertionConsumerServiceURL()) {
+        if (!$authnRequest->getAssertionConsumerServiceURL()) {
             return;
         }
 

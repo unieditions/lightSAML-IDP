@@ -18,26 +18,16 @@ use Psr\Log\LoggerInterface;
 
 class AssertionVersionAction extends AbstractAssertionAction
 {
-    /** @var string */
-    private $version;
+    private string $version;
 
-    /**
-     * @param LoggerInterface $logger
-     * @param string          $version
-     */
-    public function __construct(LoggerInterface $logger, $version)
+    public function __construct(LoggerInterface $logger, string $version)
     {
         parent::__construct($logger);
 
         $this->version = $version;
     }
 
-    /**
-     * @param AssertionContext $context
-     *
-     * @return void
-     */
-    protected function doExecute(AssertionContext $context)
+    protected function doExecute(AssertionContext $context): void
     {
         $context->getAssertion()->setVersion($this->version);
 

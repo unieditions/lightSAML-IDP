@@ -57,7 +57,7 @@ class EncryptAssertionAction extends AbstractAssertionAction
         if (null == $assertion = $context->getAssertion()) {
             throw new LightSamlContextException($context, 'Assertion for encryption is not set');
         }
-        $context->setAssertion(null);
+        $context->setAssertion();
 
         $query = $this->credentialResolver->query();
         $query
