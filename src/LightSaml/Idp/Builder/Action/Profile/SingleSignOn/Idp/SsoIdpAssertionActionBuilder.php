@@ -72,8 +72,7 @@ class SsoIdpAssertionActionBuilder extends AbstractProfileActionBuilder
         $this->add(new AttributeAction(
             $this->buildContainer->getSystemContainer()->getLogger(),
             $this->buildContainer->getProviderContainer()->getAttributeValueProvider(),
-            120
-        ));
+        ), 120);
 
         $this->add(new AuthnStatementAction(
             $this->buildContainer->getSystemContainer()->getLogger(),
